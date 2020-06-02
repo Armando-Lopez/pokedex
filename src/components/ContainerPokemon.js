@@ -1,8 +1,9 @@
 import React from 'react';
 import Cardpokemon from './CardPokemon'
+import PokemonService from '../PokemonService'
 
 const Container = () => {
-    
+    PokemonService.getPokemons().then(console.log);
     return ( 
         <>
         <div className="row">

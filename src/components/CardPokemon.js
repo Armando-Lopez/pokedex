@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CardPokemon = ({photo, name, id, type}) => {
     return (
         <div className="cardPokemon">

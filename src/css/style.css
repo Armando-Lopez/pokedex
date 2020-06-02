@@ -1,0 +1,9 @@
+.cardPokemon{
+    width: 15rem;
+    margin: 5px;
+    background-color: gray;
+
+}
+.row{
+    margin: auto;
+}

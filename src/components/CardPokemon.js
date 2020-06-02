@@ -1,19 +1,41 @@
-import React from 'react';
-
+import React, { useEffect, useState }  from 'react';
+import PokemonService from '../PokemonService'
 
 const CardPokemon = ({photo, name, id, type}) => {
-    return (
-        <div className="cardPokemon">
-            <img src="https://i.pinimg.com/originals/f5/1d/08/f51d08be05919290355ac004cdd5c2d6.png" className="card-img-top" alt="pokemon"/>
-            <div className="card-body">
-                <p className="card-text">
-                    {name} <br/>
-                    {id}   <br/>
-                    {type} <br/>
-                </p>
+    const [poke, setPoke] = useState(undefined);
+
+    useEffect(() => {
+        PokemonService.getPokemonInfo(name).then((res) => {
+            setPoke(res);
+    
+    }) }, []);
+    
+    if (poke) {
+        console.log('pokemon: ', poke)
+        console.log('tipo: ', poke.types[0].type.name)
+        console.log('url: ', poke.sprites.front_default)
+    
+        return (
+            <div className="cardPokemon">
+                <div className="imgPokemon">
+                    <img src={poke.sprites.front_default} alt={name}/>
+                </div>
+                <div className="card-body">
+                    <div className="card-text text-center">
+                        # {poke.id} 
+                        <h5> {name}</h5>
+                        <p>Type: {poke.types.map(t => t.type.name).join(', ')}</p>
+                                               
+                    </div>
+                </div>
             </div>
-        </div>
+        )
+    }else{
+        return(
+            <div>Cargando...</div>
+        )
+    }   
         
-)}
+}
  
 export default CardPokemon;

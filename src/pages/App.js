@@ -24,6 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchPokemons onKeyUp={this._getInputValue} />
+        asas
       </div>
     );
   }

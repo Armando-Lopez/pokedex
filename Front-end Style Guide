@@ -1,6 +1,8 @@
 
 Colors
-        #ffcc01
+        Amarillo Pokemon: #ffcc01
+        Gris Oscuro: #333
+        Gris Claro: #4e4e4e
 
 Typography
   Body Copy
@@ -12,4 +14,7 @@ Typography
     
 Icons
 
-Font Awesome
+Font Awesome:
+     fa-arrow-letf
+     fa-search
+     

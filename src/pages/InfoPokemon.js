@@ -27,7 +27,9 @@ class InfoPokemon extends Component {
     }
 
     async _getPokemon() {
-        let pokemonData = await PokemonService.getPokemonInfo('pikachu');
+        const { name } = this.props.match.params
+
+        let pokemonData = await PokemonService.getPokemonInfo(name);
         this.setState({
             pokemon: pokemonData,
             loading: false

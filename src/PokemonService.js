@@ -7,7 +7,7 @@ let getPokemons = () =>{
     const pokemons = getInfo("pokemons") 
     
     if(!pokemons){
-        return axios.get('http://pokeapi.salestock.net/api/v2/pokemon/')
+        return axios.get('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25')
         .then(res =>{
             saveInfo("pokemons", res.data.results);
             return res.data.results    

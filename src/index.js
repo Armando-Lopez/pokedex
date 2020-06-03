@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Route exact path="/" component={App} />
-      <Route exact path="/infopokemon" component={InfoPokemon} />
+      <Route exact path="/infopokemon/:name" component={InfoPokemon} />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,0 +1,111 @@
+.info-pokemon {
+  background-color: #333;
+}
+
+.card-pokemon {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1em;
+  align-items: center;
+  border-radius: 20px;
+  border: solid 1px #ffcc01;
+  background-color: #4e4e4e;
+  box-shadow: 5px 5px 5px black;
+  overflow-x: hidden;
+}
+
+.card-pokemon .pokemon-name {
+  padding: 0.1em 0;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffcc01;
+  background-color: black;
+}
+
+.card-pokemon .datePokemon .img {
+  width: 70%;
+  image-rendering: pixelated;
+}
+
+.card-pokemon .datePokemon .types .type {
+  font-size: 20px;
+  max-width: 200px;
+  color: #ffcc01;
+  background-color: black;
+  cursor: unset;
+}
+
+.card-pokemon .datePokemon .stats {
+  text-transform: capitalize;
+}
+
+.card-pokemon .datePokemon .stats .stat {
+  padding: 0.5em 2em;
+  border: 1px solid #333;
+}
+
+.card-pokemon .datePokemon .stats .stat .badge {
+  padding: 2px 8px;
+  font-size: 1em;
+  background-color: #ffcc01;
+}
+
+.card-pokemon .profile {
+  margin-top: 20px;
+}
+
+.card-pokemon .profile .title {
+  padding: 0 0.4em;
+  font-size: 1.4em;
+  color: #ffcc01;
+  background-color: black;
+}
+
+.App {
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #333;
+}
+
+.cardPokemon {
+  width: 11rem;
+  margin: 11px;
+  align-items: center;
+  border-radius: 20px;
+  border: solid 1px #ffcc01;
+  background-color: #4e4e4e;
+  box-shadow: 5px 5px 5px black;
+}
+
+.imgPokemon {
+  text-align: center;
+  margin: auto;
+}
+
+.card-body {
+  /* background-color: #2c6cb4; */
+  border-radius: 14px;
+  color: white;
+  padding: 1px;
+}
+
+.card-text h5 {
+  color: #ffcc01;
+}
+
+.card-text p {
+  color: white;
+  font-family: "Marck Script", cursive;
+  font-size: 20px;
+}
+
+.id {
+  margin-bottom: 0.2rem;
+  background-color: rgba(44, 108, 180, 0.5);
+}
+
+.row {
+  margin: auto;
+}
+/*# sourceMappingURL=style.css.map */

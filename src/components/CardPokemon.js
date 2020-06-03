@@ -1,5 +1,7 @@
 import React, { useEffect, useState }  from 'react';
 import PokemonService from '../PokemonService'
+import { Link } from 'react-router-dom';
+
 
 const CardPokemon = ({photo, name, id, type}) => {
     const [poke, setPoke] = useState(undefined);
@@ -13,19 +15,21 @@ const CardPokemon = ({photo, name, id, type}) => {
     if (poke) {
             
         return (
-            <div className="cardPokemon">
-                <div className="imgPokemon">
-                    <img src={poke.sprites.front_default} alt={name}/>
-                </div>
-                <div className="card-body">
-                    <div className="card-text text-center">
-                        <p className="id">Id: {poke.id} </p>
-                        <h5> {name}</h5>
-                        <p>{poke.types.map(t => t.type.name).join(', ')}</p>
-                                               
+            <Link to={`infopokemon/${name}`}>
+                <div className="cardPokemon">
+                    <div className="imgPokemon">
+                        <img src={poke.sprites.front_default} alt={name}/>
+                    </div>
+                    <div className="card-body">
+                        <div className="card-text text-center">
+                            <p className="id">Id: {poke.id} </p>
+                            <h5> {name}</h5>
+                            <p>{poke.types.map(t => t.type.name).join(', ')}</p>
+                                                
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         )
     }else{
         return(

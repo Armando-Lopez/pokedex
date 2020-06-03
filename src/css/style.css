@@ -1,9 +1,17 @@
+.App {
+    height: 100vh;
+    font-size: 1.5rem;
+    background-color: #333;
+}
+
 .cardPokemon{
-    width: 15rem;
-    margin: 5px;
+    width: 11rem;
+    margin: 11px;
     align-items: center;
     border-radius: 20px;
-    border: solid 5px #ffcc01
+    border: solid 1px #ffcc01;
+    background-color: rgb(78, 78, 78);
+    box-shadow: 5px 5px 5px black;
 
 }
 
@@ -12,13 +20,26 @@
     margin: auto;
 }
 .card-body{
-    background-color: #2c6cb4;
+    /* background-color: #2c6cb4; */
     border-radius: 14px;
     color: white;
     padding: 1px;
+    
+    
 }
 .card-text h5{
     color: #ffcc01;
+}
+.card-text p{
+    color: white;
+    font-family: 'Marck Script', cursive;
+    font-size: 20px;
+  
+}
+.id{
+    margin-bottom: 0.2rem;
+    background-color: rgba(#2c6cb4, 0.5);
+
 }
 .row{
     margin: auto;

@@ -11,10 +11,7 @@ const CardPokemon = ({photo, name, id, type}) => {
     }) }, []);
     
     if (poke) {
-        console.log('pokemon: ', poke)
-        console.log('tipo: ', poke.types[0].type.name)
-        console.log('url: ', poke.sprites.front_default)
-    
+            
         return (
             <div className="cardPokemon">
                 <div className="imgPokemon">
@@ -22,9 +19,9 @@ const CardPokemon = ({photo, name, id, type}) => {
                 </div>
                 <div className="card-body">
                     <div className="card-text text-center">
-                        # {poke.id} 
+                        <p className="id">Id: {poke.id} </p>
                         <h5> {name}</h5>
-                        <p>Type: {poke.types.map(t => t.type.name).join(', ')}</p>
+                        <p>{poke.types.map(t => t.type.name).join(', ')}</p>
                                                
                     </div>
                 </div>
@@ -32,7 +29,7 @@ const CardPokemon = ({photo, name, id, type}) => {
         )
     }else{
         return(
-            <div>Cargando...</div>
+            <div></div>
         )
     }   
         

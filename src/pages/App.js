@@ -1,33 +1,26 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchPokemons from '../components/SearchPokemons';
-import axios from 'axios'
-import Container from '../components/ContainerPokemon'
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pokemons: []
-    }
-    this._getInputValue = this._getInputValue.bind(this);
-  }
+import Container from '../components/ContainerPokemon';
+import PokemonService from '../PokemonService'
 
-  componentDidMount() {
+const App = () => {
+  const [pokemons, setPokemons] = useState([]);
+  
+  const [search, setSearch] = useState("");
 
-  }
+    useEffect(() => {
+        PokemonService.getPokemons().then((res) => {
+        setPokemons (res.filter(e => e.name.includes(search)))
+        })
+    }, [search]);
 
-  _getInputValue(e) {
-    console.log(e.target.value);
+  return ( 
 
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <SearchPokemons onKeyUp={this._getInputValue} />
-        <Container />
-      </div>
-    );
-  }
+    <div className="App">
+      <SearchPokemons pokemons={pokemons} onSearch={setSearch}/>
+      <Container pokemons={pokemons}/>
+    </div>
+  );
 }
-
+ 
 export default App;

@@ -3,15 +3,6 @@ import PokemonService from '../PokemonService';
 import DatePokemon from '../components/Infopokemon/DatePokemon'
 import ProfilePokemon from '../components/Infopokemon/ProfilePokemon'
 
-const Name = ({ name }) => (
-    <div className="row">
-        <div className="col-12">
-            <h5 className="card-title">{name.toUpperCase()}</h5>
-        </div>
-    </div>
-);
-
-
 class InfoPokemon extends Component {
     constructor(props) {
         super(props);
@@ -40,28 +31,24 @@ class InfoPokemon extends Component {
         const { pokemon, loading } = this.state;
         if (pokemon && !loading) {
 
-            const { name, height, weight, types, stats } = pokemon;
+            const { id, name, height, weight, types, stats } = pokemon;
             console.log(pokemon);
 
             const { front_default } = pokemon.sprites;
 
             return (
-                <article className="container-fluid">
-                    <div className="card" style={{ width: "25rem" }}>
-                        <Name name={name} />
+                <div className="info-pokemon container-fluid">
+                    <div className="card-pokemon m-auto">
+
+                        <h3 className="pokemon-name">#{id} {name}</h3>
+
                         <DatePokemon img={front_default} types={types} stats={stats} />
 
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">
-                                <ProfilePokemon height={height} weight={weight} />
-                            </li>
-                            <li className="list-group-item">Profile</li>
-                            <li className="list-group-item">Evolutions</li>
-                        </ul>
-                        <div className="card-body">
-                        </div>
+                        <ProfilePokemon height={height} weight={weight} />
+                        <li className="list-group-item">Evolutions</li>
+
                     </div>
-                </article >
+                </div >
             );
         } else {
             return (

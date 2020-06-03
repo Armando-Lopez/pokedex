@@ -3,7 +3,7 @@ import PokemonService from '../PokemonService'
 import { Link } from 'react-router-dom';
 
 
-const CardPokemon = ({photo, name, id, type}) => {
+const CardPokemon = ({ name,}) => {
     const [poke, setPoke] = useState(undefined);
 
     useEffect(() => {

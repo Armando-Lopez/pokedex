@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PokemonService from '../PokemonService';
 import DatePokemon from '../components/Infopokemon/DatePokemon'
 import ProfilePokemon from '../components/Infopokemon/ProfilePokemon'
+import { Link } from 'react-router-dom';
 
 class InfoPokemon extends Component {
     constructor(props) {
@@ -38,6 +39,10 @@ class InfoPokemon extends Component {
 
             return (
                 <div className="info-pokemon container-fluid">
+                    <Link to="/">
+                        <i className="fas fa-arrow-left" aria-hidden="true" ></i>
+                    </Link>
+                    
                     <div className="card-pokemon m-auto">
 
                         <h3 className="pokemon-name">#{id} {name}</h3>
@@ -52,7 +57,7 @@ class InfoPokemon extends Component {
             );
         } else {
             return (
-                <h1>Cargando</h1>
+                <div className="loading">Loading...</div>
             )
         }
     }

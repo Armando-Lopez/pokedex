@@ -8,7 +8,7 @@ const Container = ({pokemons}) => {
         
         return (
             <>
-                <div className="row">
+                <div id="containerCardsPokemon" className="row">
                     {pokemons.map(p => <Cardpokemon key={p.name} name={p.name} />)}
                 </div>
             </>
@@ -16,7 +16,7 @@ const Container = ({pokemons}) => {
         );
     } else {
         return (
-            <div>Cargando...</div>
+            <div className="loading">Loading...</div>
         )
     }
 }

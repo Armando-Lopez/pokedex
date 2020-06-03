@@ -7,7 +7,7 @@ let getPokemons = () =>{
     const pokemons = getInfo("pokemons") 
     
     if(!pokemons){
-        return axios.get('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25')
+        return axios.get('https://pokeapi.co/api/v2/pokemon/?limit=25')
         .then(res =>{
             saveInfo("pokemons", res.data.results);
             return res.data.results    
@@ -17,19 +17,20 @@ let getPokemons = () =>{
     }
     
 
-let getPokemonInfo = (namePokemon) =>{
-    const poke = getInfo(`poke-${namePokemon}`)
+let getPokemonInfo = async (namePokemon) =>{
+    let poke = getInfo(`poke-${namePokemon}`)
 
     if(!poke){
-        return axios.get(`http://pokeapi.salestock.net/api/v2/pokemon/${namePokemon}`)
-        .then(res => {
-            saveInfo(`poke-${namePokemon}`, res.data);
-            return res.data     
-        })
+        const pokeData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
+        const specieData= await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${pokeData.data.id}`);
+        const evolData = await axios.get(specieData.data.evolution_chain.url);
+        poke = { pokemon: pokeData.data, specie: specieData.data , evolution: evolData.data }
+        saveInfo(`poke-${namePokemon}`, poke);
     }
 
     return Promise.resolve(poke)
     
 }
+
 
 export default {getPokemons,getPokemonInfo}

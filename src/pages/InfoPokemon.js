@@ -1,30 +1,71 @@
 import React, { Component } from 'react';
+import PokemonService from '../PokemonService';
+import DatePokemon from '../components/Infopokemon/DatePokemon'
+import ProfilePokemon from '../components/Infopokemon/ProfilePokemon'
+
+const Name = ({ name }) => (
+    <div className="row">
+        <div className="col-12">
+            <h5 className="card-title">{name.toUpperCase()}</h5>
+        </div>
+    </div>
+);
+
+
 class InfoPokemon extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            pokemon: undefined,
+            loading: true,
+            error: false
+        }
     }
+
+    componentDidMount() {
+        this._getPokemon();
+    }
+
+    async _getPokemon() {
+        let pokemonData = await PokemonService.getPokemonInfo('pikachu');
+        this.setState({
+            pokemon: pokemonData,
+            loading: false
+        })
+    }
+
     render() {
-        return (
-            <article className="bg-primary">
-                <div className="row">
-                    <div className="card mx-auto mt-1 col-7">
-                        <img className="card-img-top img-fluid img-thumbnail" src="https://fotos01.lne.es/2016/07/27/318x200/trucos-disfrutar-1.jpg" alt="Pokemon" />
-                        <div className="card-body">
-                            <h5 className="card-title">Pokemon Name</h5>
-                            <p className="card-text">pokemon info</p>
-                        </div>
+        const { pokemon, loading } = this.state;
+        if (pokemon && !loading) {
+
+            const { name, height, weight, types, stats } = pokemon;
+            console.log(pokemon);
+
+            const { front_default } = pokemon.sprites;
+
+            return (
+                <article className="container-fluid">
+                    <div className="card" style={{ width: "25rem" }}>
+                        <Name name={name} />
+                        <DatePokemon img={front_default} types={types} stats={stats} />
+
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Date</li>
+                            <li className="list-group-item">
+                                <ProfilePokemon height={height} weight={weight} />
+                            </li>
                             <li className="list-group-item">Profile</li>
                             <li className="list-group-item">Evolutions</li>
                         </ul>
                         <div className="card-body">
                         </div>
                     </div>
-                </div>
-            </article >
-        );
+                </article >
+            );
+        } else {
+            return (
+                <h1>Cargando</h1>
+            )
+        }
     }
 }
 

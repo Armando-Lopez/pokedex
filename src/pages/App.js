@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchPokemons from '../components/SearchPokemons';
 import axios from 'axios'
-
+import Container from '../components/ContainerPokemon'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,10 +24,11 @@ class App extends Component {
     return (
       <div className="App">
         <SearchPokemons onKeyUp={this._getInputValue} />
-        asas
+        <Container />
       </div>
     );
   }
+
 }
 
 export default App;

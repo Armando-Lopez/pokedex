@@ -11,10 +11,7 @@ const CardPokemon = ({photo, name, id, type}) => {
     }) }, []);
     
     if (poke) {
-        console.log('pokemon: ', poke)
-        console.log('tipo: ', poke.types[0].type.name)
-        console.log('url: ', poke.sprites.front_default)
-    
+            
         return (
             <div className="cardPokemon">
                 <div className="imgPokemon">

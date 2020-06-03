@@ -6,8 +6,8 @@ const ProfilePokemon = ({ height, weight, }) => {
         <div className="profile">
             <h3 className="title">Profile</h3>
             <div className="row">
-                <div className="col">{height} m</div>
-                <div className="col">{height} m</div>
+                <div className="col">Height: {height} m</div>
+                <div className="col">Weight: {weight} m</div>
             </div>
         </div>
     )

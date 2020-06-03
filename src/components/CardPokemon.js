@@ -3,16 +3,23 @@ import PokemonService from '../PokemonService'
 import { Link } from 'react-router-dom';
 
 
-const CardPokemon = ({ name,}) => {
+const CardPokemon = ({ name}) => {
     const [poke, setPoke] = useState(undefined);
-
+    const [specie, setSpecie] = useState(undefined);
+    const [pokEvolution, setPokEvolution] = useState(undefined);
+    
     useEffect(() => {
         PokemonService.getPokemonInfo(name).then((res) => {
-            setPoke(res);
+            setPoke(res.pokemon);
+            setSpecie(res.specie);
+            setPokEvolution(res.evolution);
+        });
+    }, [name]);
     
-    }) }, []);
     
-    if (poke) {
+    if (poke && pokEvolution) {
+        console.log('pokEvolution: ',pokEvolution.chain.evolves_to[0].species.name);
+        
             
         return (
             <Link to={`infopokemon/${name}`}>
@@ -25,6 +32,7 @@ const CardPokemon = ({ name,}) => {
                             <p className="id">Id: {poke.id} </p>
                             <h5> {name}</h5>
                             <p>{poke.types.map(t => t.type.name).join(', ')}</p>
+                            <p>Evoluciona a: {pokEvolution.chain.evolves_to[0].species.name}</p>
                                                 
                         </div>
                     </div>

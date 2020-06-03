@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import App from './pages/App';
 import InfoPokemon from './pages/InfoPokemon'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './scss/style.css'
+import './scss/style.scss'
 
 ReactDOM.render(
   <React.StrictMode>

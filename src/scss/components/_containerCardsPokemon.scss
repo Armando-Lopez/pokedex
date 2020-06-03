@@ -1,0 +1,80 @@
+//
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#pokelogo{
+    width: 300px;
+    
+}
+#containerCardsPokemon{
+    margin-top: 8vh;
+    max-width: 1110px;
+}
+
+.form-control{
+    min-width: 70vw;
+    margin-top: 1vh;
+    border: 2px solid $card-border-color;
+    background-color: $card-background-color;
+    color: white;
+
+    &:hover{
+        border: 2px solid $card-border-color;
+        color: white;
+    }
+
+    &:focus{
+        border: 2px solid $card-border-color;
+        box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.12);
+        background-color: $card-background-color;
+        color: white;
+        
+    }
+}
+
+.fa-search{
+    margin-top: 1vh;
+    color: $card-border-color
+}
+.cardPokemon {
+    width: 200px;
+    margin: 11px;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 1px $card-border-color;
+    background-color: $card-background-color;
+    box-shadow: 5px 5px 5px $card-shadow-color;
+}
+
+
+.imgPokemon {
+    text-align: center;
+    margin: auto;
+}
+
+.card-body {
+    border-radius: 14px;
+    color: $card-text-color;
+    padding: 1px;
+}
+.card-text h5{
+    color: $pokemon-name-color;
+}
+.card-text p {
+    font-family: "Marck Script", cursive;
+    font-size: 20px;
+}
+.id {
+    margin-bottom: 0.2rem;
+    
+}
+
+
+.loading{
+    color: $pokemon-name-color;
+    margin-top: 10vh;
+}

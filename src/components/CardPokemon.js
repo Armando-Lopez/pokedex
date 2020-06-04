@@ -18,8 +18,7 @@ const CardPokemon = ({ name}) => {
     
     
     if (poke && pokEvolution) {
-        console.log('pokEvolution: ',pokEvolution.chain.evolves_to[0].species.name);
-        
+       
             
         return (
             <Link to={`infopokemon/${name}`}>
@@ -29,11 +28,11 @@ const CardPokemon = ({ name}) => {
                     </div>
                     <div className="card-body">
                         <div className="card-text text-center">
-                            <p className="id">Id: {poke.id} </p>
+                            <p className="id">Id: {poke.id} / {poke.types.map(t => t.type.name).join(', ')}</p>
                             <h5> {name}</h5>
-                            <p>{poke.types.map(t => t.type.name).join(', ')}</p>
-                            <p>Evoluciona a: {pokEvolution.chain.evolves_to[0].species.name}</p>
-                                                
+                            <p>Evolución de:  
+                                <small>{specie.evolves_from_species ? specie.evolves_from_species.name : '--♥--'}</small>
+                            </p>    
                         </div>
                     </div>
                 </div>

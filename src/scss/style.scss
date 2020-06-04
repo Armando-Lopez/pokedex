@@ -1,13 +1,47 @@
-@import "colors";
-@import "components/infopokemon";
-@import "components/containerCardsPokemon";
+@import 'colors';
+@import 'components/infopokemon';
+@import 'components/containerCardsPokemon';
 
-html{
-    height: 100%;
-    background-color: $background-color;
-    font-size: 1.5rem;
+html {
+  height: 100%;
+  background-color: $background-color;
+  font-size: 1.5rem;
 }
 .App {
-    min-height: 100vh;
-    background-color: $background-color;
+  min-height: 100vh;
+  background-color: $background-color;
+}
+
+.slide-enter,
+.slide-exit {
+  transition: transform 1000ms ease-out;
+}
+
+.slide-enter {
+  transform: translateX(100%);
+}
+
+.slide-enter.slide-enter-active {
+  transform: translateX(0%);
+}
+
+.slide-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(0%);
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+}
+
+#footer {
+  font-family: 'Marck Script', cursive;
+  height: 3.5em;
+  margin-bottom: 0;
+  color: $pokemon-name-color;
+  text-align: center;
 }

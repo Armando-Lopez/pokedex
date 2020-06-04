@@ -1,6 +1,6 @@
-@import "colors";
-@import "components/infopokemon";
-@import "components/containerCardsPokemon";
+@import 'colors';
+@import 'components/infopokemon';
+@import 'components/containerCardsPokemon';
 
 html {
   height: 100%;
@@ -36,4 +36,12 @@ html {
 
 .slide-exit-active {
   transform: translateX(-100%);
+}
+
+#footer {
+  font-family: 'Marck Script', cursive;
+  height: 3.5em;
+  margin-bottom: 0;
+  color: $pokemon-name-color;
+  text-align: center;
 }

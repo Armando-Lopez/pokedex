@@ -20,6 +20,10 @@ const App = () => {
       <img id="pokelogo" src={pokelogo} alt="img-pokemon" />
       <SearchPokemons pokemons={pokemons} onSearch={setSearch} />
       <Container pokemons={pokemons} />
+      <footer id="footer">
+        <hr />
+        Copyright ©2020 | Elaboración de Tatiana Pabón y Diego López |
+      </footer>
     </div>
   );
 };

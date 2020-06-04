@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PokemonService from '../PokemonService';
 import DatePokemon from '../components/Infopokemon/DatePokemon'
 import ProfilePokemon from '../components/Infopokemon/ProfilePokemon'
+import EvolutionPokemon from '../components/Infopokemon/EvolutionPokemon'
 import { Link } from 'react-router-dom';
 
 class InfoPokemon extends Component {
@@ -32,10 +33,9 @@ class InfoPokemon extends Component {
         const { pokemon, loading } = this.state;
         if (pokemon && !loading) {
 
-            const { id, name, height, weight, types, stats } = pokemon;
-            console.log(pokemon);
+            const { id, name, height, weight, types, stats } = pokemon.pokemon;
 
-            const { front_default } = pokemon.sprites;
+            const { front_default } = pokemon.pokemon.sprites;
 
             return (
                 <div className="info-pokemon container-fluid">
@@ -50,7 +50,8 @@ class InfoPokemon extends Component {
                         <DatePokemon img={front_default} types={types} stats={stats} />
 
                         <ProfilePokemon height={height} weight={weight} />
-                        <li className="list-group-item">Evolutions</li>
+
+                        <EvolutionPokemon pokemonName={name}/>
 
                     </div>
                 </div >

@@ -24,7 +24,7 @@ const EvolutionPokemon = ({ pokemonName }) => {
         <div className="text-center d-flex flex-column align-items-center">
           {preEvolution !== 'none' ? (
             <p>
-              Evoluciona de{' '}
+              Evolves from{' '}
               <span className="next-prev-evolution badge badge-pill">
                 {preEvolution}
               </span>
@@ -33,7 +33,7 @@ const EvolutionPokemon = ({ pokemonName }) => {
 
           {nextEvolution !== 'none' ? (
             <p>
-              Evoluciona a{' '}
+              Evolves to{' '}
               <span className="next-prev-evolution badge badge-pill">
                 {nextEvolution}
               </span>

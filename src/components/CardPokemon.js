@@ -18,7 +18,7 @@ const CardPokemon = ({ name }) => {
   if (poke && pokEvolution) {
     return (
       <Link to={`infopokemon/${name}`}>
-          <div className="cardPokemon">
+        <div className="cardPokemon">
           <div className="imgPokemon">
             <img src={poke.sprites.front_default} alt={name} />
           </div>
@@ -29,11 +29,10 @@ const CardPokemon = ({ name }) => {
               </p>
               <h5> {name}</h5>
               <p>
-                Evolución de:
                 <small>
                   {specie.evolves_from_species
-                    ? specie.evolves_from_species.name
-                    : '--♥--'}
+                    ? ` Evolves from: ${specie.evolves_from_species.name}`
+                    : '- - ♥ - -'}
                 </small>
               </p>
             </div>

@@ -3,8 +3,8 @@
     background-color: $background-color;
 }
 
-.fa-arrow-left{
-    color:$card-border-color;
+.fa-arrow-left {
+    color: $card-border-color;
     margin-top: 5vw;
     margin-left: 5vw;
     font-size: 2rem;
@@ -67,6 +67,23 @@
         .title {
             padding: 0 0.4em;
             font-size: 1.4em;
+            color: $pokemon-name-color;
+            background-color: $card-shadow-color;
+        }
+    }
+
+    .evolutions {
+        .evolutions-title {
+            color: $pokemon-name-color;
+            background-color: $card-shadow-color;
+        }
+        p {
+            font-weight: bold;
+            color: $card-shadow-color;
+        }
+        .next-prev-evolution {
+            font-size: 1em;
+            padding: 0.5em;
             color: $pokemon-name-color;
             background-color: $card-shadow-color;
         }

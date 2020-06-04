@@ -14,6 +14,7 @@
 #containerCardsPokemon {
   margin-top: 8vh;
   max-width: 1110px;
+  perspective: 500px;
 }
 
 .form-control {
@@ -40,14 +41,42 @@
   margin-top: 1vh;
   color: $card-border-color;
 }
+
 .cardPokemon {
+  position:relative;
   width: 200px;
   margin: 11px;
   align-items: center;
   border-radius: 20px;
   border: solid 1px $card-border-color;
-  background-color: $card-background-color;
-  box-shadow: 5px 5px 5px $card-shadow-color;
+  background-color: $card-background-color;box-shadow: 5px 5px 5px $card-shadow-color;
+  
+  transform-style: preserve-3d;
+  transition-duration: 1s;
+  overflow:hidden;
+
+  &::before{
+    content: '';
+    position:absolute;
+    width: 0px;
+    height: 120%;
+    left: 5%;
+    top: 5%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    background-color: white;
+    opacity: .3;
+    transition-duration: 1s;
+    box-shadow:0 0 10px 4px white;
+  }
+
+  &:hover{
+    transform: rotateY(3deg);
+    &::before{
+      left:95%;
+      top:95%;
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+  }
 }
 
 .imgPokemon {
@@ -60,7 +89,9 @@
   color: $card-text-color;
   padding: 1px;
 }
+
 .card-text h5 {
+  text-transform: capitalize;
   color: $pokemon-name-color;
 }
 .card-text p {

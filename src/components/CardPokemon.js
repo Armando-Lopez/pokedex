@@ -9,10 +9,10 @@ const CardPokemon = ({ name}) => {
     const [pokEvolution, setPokEvolution] = useState(undefined);
     
     useEffect(() => {
-        PokemonService.getPokemonInfo(name).then((res) => {
-            setPoke(res.pokemon);
-            setSpecie(res.specie);
-            setPokEvolution(res.evolution);
+        PokemonService.getPokemonInfo(name).then((poke) => {
+            setPoke(poke.pokemon);
+            setSpecie(poke.specie);
+            setPokEvolution(poke.evolution);
         });
     }, [name]);
     

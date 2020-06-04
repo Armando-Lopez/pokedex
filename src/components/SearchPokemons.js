@@ -10,7 +10,7 @@ const SearchPokemon = ({ onSearch }) => {
           type="text"
           placeholder="Search Pokemon"
           aria-label="Search"
-          onChange={(e) => onSearch(e.target.value)}
+          onChange={(e) => onSearch(e.target.value.toLowerCase())}
         />
       </form>
     </div>

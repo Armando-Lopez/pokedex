@@ -34,9 +34,7 @@ const EvolutionPokemon = ({ pokemonName }) => {
           {nextEvolution !== 'none' ? (
             <p>
               Evolves to{' '}
-              <span className="next-prev-evolution badge badge-pill">
-                {nextEvolution}
-              </span>
+              <span className="next-prev-evolution ">{nextEvolution}</span>
             </p>
           ) : null}
         </div>

@@ -38,14 +38,14 @@ class InfoPokemon extends Component {
 
       return (
         <div className="info-pokemon container-fluid">
-          <Link to="/">
-            <i className="fas fa-arrow-left" aria-hidden="true"></i>
-          </Link>
-
           <div className="card-pokemon m-auto">
-            <h3 className="pokemon-name">
+            <h5 className="pokemon-name">
               #{id} {name}
-            </h3>
+            </h5>
+
+            <Link to="/">
+              <i className="fas fa-arrow-left" aria-hidden="true"></i>
+            </Link>
 
             <DatePokemon img={front_default} types={types} stats={stats} />
 

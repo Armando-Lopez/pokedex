@@ -1,74 +1,74 @@
 //
 .info-pokemon {
-    background-color: $background-color;
+  background-color: $background-color;
 }
 
-.fa-arrow-left{
-    color:$card-border-color;
-    margin-top: 5vw;
-    margin-left: 5vw;
-    font-size: 2rem;
+.fa-arrow-left {
+  color: $card-border-color;
+  margin-top: 5vw;
+  margin-left: 5vw;
+  font-size: 2rem;
 }
 .card-pokemon {
-    position: relative;
-    top: 2vw;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 1em;
-    align-items: center;
-    border-radius: 20px;
-    border: solid 1px $card-border-color;
-    background-color: $card-background-color;
-    box-shadow: 5px 5px 5px $card-shadow-color;
-    overflow-x: hidden;
+  position: relative;
+  top: 2vw;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1em;
+  align-items: center;
+  border-radius: 20px;
+  border: solid 1px $card-border-color;
+  background-color: $card-background-color;
+  box-shadow: 5px 5px 5px $card-shadow-color;
+  overflow-x: hidden;
 
-    .pokemon-name {
-        padding: 0.1em 0;
-        text-align: center;
-        text-transform: capitalize;
+  .pokemon-name {
+    padding: 0.1em 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: $pokemon-name-color;
+    background-color: $card-shadow-color;
+  }
+
+  .datePokemon {
+    .img {
+      width: 70%;
+      image-rendering: pixelated;
+    }
+
+    .types {
+      .type {
+        font-size: 20px;
+        max-width: 200px;
         color: $pokemon-name-color;
         background-color: $card-shadow-color;
+        cursor: unset;
+      }
     }
 
-    .datePokemon {
-        .img {
-            width: 70%;
-            image-rendering: pixelated;
+    .stats {
+      text-transform: capitalize;
+      .stat {
+        padding: 0.5em 2em;
+        border: 1px solid $background-color;
+        .badge {
+          padding: 2px 8px;
+          font-size: 1em;
+          background-color: $pokemon-name-color;
         }
-
-        .types {
-            .type {
-                font-size: 20px;
-                max-width: 200px;
-                color: $pokemon-name-color;
-                background-color: $card-shadow-color;
-                cursor: unset;
-            }
-        }
-
-        .stats {
-            text-transform: capitalize;
-            .stat {
-                padding: 0.5em 2em;
-                border: 1px solid $background-color;
-                .badge {
-                    padding: 2px 8px;
-                    font-size: 1em;
-                    background-color: $pokemon-name-color;
-                }
-            }
-        }
+      }
     }
+  }
 
-    .profile {
-        // width: 90%;
-        margin-top: 20px;
+  .profile {
+    // width: 90%;
+    margin-top: 20px;
 
-        .title {
-            padding: 0 0.4em;
-            font-size: 1.4em;
-            color: $pokemon-name-color;
-            background-color: $card-shadow-color;
-        }
+    .title {
+      padding: 0 0.4em;
+      font-size: 1.4em;
+      color: $pokemon-name-color;
+      background-color: $card-shadow-color;
     }
+  }
 }

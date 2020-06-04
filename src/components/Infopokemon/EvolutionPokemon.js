@@ -1,15 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import PokemonService from '../../PokemonService';
 
+const EvolutionPokemon = ({ pokemonName }) => {
+  useEffect(() => {});
+  console.log(pokemonName);
 
-const EvolutionPokemon = ({pokemonName}) => {
-
-    useEffect(()=>{
-        
-    })
-    console.log(pokemonName);
-    
-    return null
-}
+  return null;
+};
 
 export default EvolutionPokemon;
